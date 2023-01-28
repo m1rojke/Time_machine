@@ -1,0 +1,23 @@
+.header-content__link {
+  height: 23px;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#facebook {
+  background-image: url(../../../../images/f.svg);
+} 
+
+#telega {
+  background-image: url(../../../../images/Telega.svg);
+}
+
+#twiter {
+  background-image: url(../../../../images/twiter.png);
+}
+
+#m {
+  background-image: url(../../../../images/path14.svg);
+}

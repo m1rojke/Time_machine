@@ -1,0 +1,13 @@
+@import url(../vendor/fonts/fonts.css);
+@import url(../blocks/page/page.css);
+/*HEADER SECTION*/
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/header-content/header-content.css);
+@import url(../blocks/header/header-content/__nav/header-content__nav.css);
+@import url(../blocks/header/header-content/__logo/header-content__logo.css);
+@import url(../blocks/header/header-content/__menu/header-content__menu.css);
+@import url(../blocks/header/header-content/__text/header-content__text.css);
+@import url(../blocks/header/header-content/__social/header-content__social.css);
+@import url(../blocks/header/header-content/__links/header-content__links.css);
+@import url(../blocks/header/header-content/__link/header-content__link.css);
+@import url(../blocks/header/header-content/__button/header-content__button.css);
