@@ -9,7 +9,7 @@
 }
 
 .header-content__text:hover {
-  font-size: 20px;
-  color: #0a3ef9;
+  color: #7737b7;
   text-shadow: 10px 5px 5px rgba(0, 0, 0, .3);
+  line-height: 20px;
 }
