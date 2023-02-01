@@ -1,0 +1,35 @@
+.grid-content__menu {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: #828282;
+  /* outline: 1px solid black; */
+}
+
+.grid-content__menu:hover {
+  color: #070707;
+  font-weight: 700;
+}
+
+.grid-content__menu:nth-child(1) {
+  grid-area: Home;
+  width: 100%;
+}
+.grid-content__menu:nth-child(2) {
+  grid-area: About;
+  width: 100%;
+}
+.grid-content__menu:nth-child(3) {
+  grid-area: Skills;
+  width: 100%;
+}
+.grid-content__menu:nth-child(4) {
+  grid-area: Portfolio;
+  width: 100%;
+}
+.grid-content__menu:nth-child(5) {
+  grid-area: Contacts;
+  width: 100%;
+}

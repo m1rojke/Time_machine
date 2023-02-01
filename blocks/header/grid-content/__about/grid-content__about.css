@@ -1,0 +1,6 @@
+.grid-content__about {
+  margin: 0;
+  grid-area: Subtitle;
+  font-size: 14px;
+  line-height: 22px;
+}

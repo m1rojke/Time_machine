@@ -1,0 +1,4 @@
+.grid-content__picture {
+  grid-area: Image;
+  width: 100%;
+}

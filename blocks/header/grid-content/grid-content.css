@@ -1,25 +1,16 @@
-.header {
-  margin: 20px 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* .header {
-  margin: 0;
+.grid-content {
+  /* outline: 1px solid #2c27b4; */
+  width: 80%;
   display: grid;
-  width: 100%;
   grid-template-areas:
   "Home About Skills Portfolio Contacts"
-  "Title . Subtitle . Lang "
+  "Title . Subtitle . Lang"
   "Image Image Image Image Image";
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 15px 100px 1fr;
-  grid-row-gap: 20px;
-  border: 1px solid red;
+  grid-template-rows: 15px 80px 1fr;
+  gap: 30px 0;
 }
-.home {
+/* .home {
   grid-area: Home;
   width: 100%;
   justify-self: center;
@@ -62,4 +53,4 @@
 img {
   grid-area: Image;
   width: 100%;
-} */
+}  */
