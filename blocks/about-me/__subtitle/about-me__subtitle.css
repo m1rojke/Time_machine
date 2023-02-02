@@ -1,0 +1,10 @@
+.about-me__subtitle {
+  margin: 0;
+  width: 455px;
+  font-size: 18px;
+  line-height: 22px;
+  color: #070707;
+  gap: 30px;
+  text-align: center;
+  /* outline: 1px solid black; */
+}
