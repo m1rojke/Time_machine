@@ -4,38 +4,41 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+  <link rel="stylesheet" href="/vendor/normalize.css">
   <link href="pages/index.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-  <title>Document</title>
+  <title>Portfolio</title>
 </head>
 <body class="page">
+  <nav class="nav">
+    <ul>
+      <li>Time</li>
+      <li>Set lap</li>
+      <li>Timeout</li>
+    </ul>
+  </nav>
   <header class="header">
-      <div class="grid-content">
-        <a href="#" class="grid-content__menu">Home</a>
-        <a href="#" class="grid-content__menu">About me</a>
-        <a href="#" class="grid-content__menu">Skills</a>
-        <a href="#" class="grid-content__menu">Portfolio</a>
-        <a href="#" class="grid-content__menu">Contacts</a>
-        <h1 class="grid-content__name">DENIS PENIS</h1>
-          <p class="grid-content__about">UX | UI designer
-            24 years old, Minsk</p>
-          <div class="grid-content__lang">
-            <a href="">RU</a>
-            <a>ENG</a>
-          </div>
-          <img src="images/BSPP2266.png" alt="sds" class="grid-content__picture"> 
-      </div>
+    <button class="button-reset">reset</button>
+    <!-- <button class="popup">menu</button> -->
+    <div class="popup">
+      <span></span>
     </div>
   </header>
-  <section class="about-me">
-      <h2 class="about-me__title">About me</h2>
-        <p class="about-me__subtitle">Hi, I'm Denis – UX/UI designer from Minsk.
-         I'm interested in design and everything connected with it.</p>
-        <p class="about-me__subtitle">'m studying at courses "Web and mobile design interfaces" in IT-Academy.</p>
-        <p class="about-me__subtitle">Ready to implement excellent projects with wonderful people.</p>
+  <section class="wrapper">
+    <div class="timer">
+      <h1 class="timer__title">таймер</h1>
+      <div class="timer__value">20:00</div>
+    </div>
+    <button class="timer__start">go</button>
   </section>
+  <footer class="footer">
+    <div class="lap">
+      <span class="lap-current">0</span>
+      из
+      <span class="lap-total">20</span>
+      кругов
+    </div>
+    <button class="info">info</button>
+  </footer>
+  <script src="/scripts/popup.js"></script>
 </body>
 </html>

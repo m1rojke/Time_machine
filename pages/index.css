@@ -1,16 +1,82 @@
-@import url(/node_modules/normalize.css/normalize.css);
 
 @import url(../blocks/page/page.css);
 /*HEADER SECTION*/
 @import url(../blocks/header/header.css);
-@import url(../blocks/header/grid-content/grid-content.css);
-@import url(../blocks/header/grid-content/__menu/grid-content__menu.css);
-@import url(../blocks/header/grid-content/__name/grid-content__name.css);
-@import url(../blocks/header/grid-content/__about/grid-content__about.css);
-@import url(../blocks/header/grid-content/__lang/grid-content__lang.css);
-@import url(../blocks/header/grid-content/__picture/grid-content__picture.css);
-/* SECTION ABOUT-ME */
-@import url(../blocks/about-me/about-me.css);
-@import url(../blocks/about-me/__title/about-me__title.css);
-@import url(../blocks/about-me/__subtitle/about-me__subtitle.css);
 
+.wrapper {
+  margin: 0;
+  padding: 50px;
+  box-sizing: border-box;
+  display: grid;
+  width: 100%;
+  background-color: aqua;
+}
+.timer {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 50%;
+  background-color:blue;
+  justify-self: center;
+  align-self: center;
+}
+.timer__title {
+  text-align: center;
+}
+.timer__value {
+  padding-top: 50px;
+  text-align: center;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 80px;
+}
+
+.timer__start {
+  width: 50px;
+  height: 50px;
+  justify-self: center;
+}
+
+
+.footer {
+  height: 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.lap {
+  height: 50px;
+  margin: 10px;
+}
+/* .lap-current {
+
+}
+.lap-total {
+} */
+.info {
+  height: 50px;
+  width: 100px;
+}
+
+.nav {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  width: 50%;
+  height: 80%;
+  top: 0;
+  right: 0;
+  padding: 50px;
+  background-color: black;
+  animation: popupAnimation 0.4s;
+  color: #fff;
+}
+
+@keyframes popupAnimation {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.open {
+  display: flex;
+}

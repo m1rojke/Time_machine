@@ -1,8 +1,0 @@
-.grid-content__lang {
-  grid-area: Lang;
-  font-size: 16px;
-  line-height: 20px;
-  color: #828282; 
-  transform: rotate(-90deg);
-  justify-self: flex-end;
-}

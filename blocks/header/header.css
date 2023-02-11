@@ -1,65 +1,67 @@
 .header {
-  margin: 50px 0;
+  margin: 0;
+  padding: 15px 15px;
   width: 100%;
+  background-color: blue;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  grid-template-areas: 
+  "Reset Popup";
+}
+
+.button-reset {
+  width: 100px;
+  height: 30px;
+  grid-area: Reset;
+  justify-self: center;
+}
+.popup {
+  grid-area: Popup;
+  width: 50px;
+  height: 17px;
+  align-self: center;
+  justify-self: flex-end;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* .header {
-  margin: 0;
-  display: grid;
-  width: 100%;
-  grid-template-areas:
-  "Home About Skills Portfolio Contacts"
-  "Title . Subtitle . Lang "
-  "Image Image Image Image Image";
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 15px 100px 1fr;
-  grid-row-gap: 20px;
-  border: 1px solid red;
-}
-.home {
-  grid-area: Home;
-  width: 100%;
-  justify-self: center;
-  align-self: center;
-}
-.about {
-  grid-area: About;
-  width: 100%;
-}
-.skills {
-  grid-area: Skills;
-  width: 100%;
-}
-.portfolio {
-  grid-area: Portfolio;
-  width: 100%;
-}
-.contacts {
-  grid-area: Contacts;
-  width: 100%;
+.popup span {
+  height: 2px;
+  width: 30%;
+  transform: scale(1);
+  background-color: #fff;
 }
 
-
-.title {
-  grid-area: Title;
-  width: 100%;
-  border: 1px solid red;
-  margin: 0;
+.popup::before, .popup::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 60%;
+  background-color: #fff;
+  transition: all 0.3s ease 0s;
 }
-.subTitle {
-  grid-area: Subtitle;
-  width: 100%;
-  margin: 0;
-}
-.lang {
-  grid-area: Lang;
-  width: 100%;
-} 
 
-img {
-  grid-area: Image;
-  width: 100%;
-} */
+.popup::before {
+  top: 0;
+}
+
+.popup::after {
+  bottom: 0;
+}
+
+.popup.active span {
+  transform: scale(0);
+}
+
+.popup.active::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -50%);
+}
+
+.popup.active::after {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0, 50%);
+}
