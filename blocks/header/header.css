@@ -2,7 +2,8 @@
   margin: 0;
   padding: 15px 15px;
   width: 100%;
-  background-color: blue;
+
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); 
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 50px;
@@ -11,11 +12,26 @@
 }
 
 .button-reset {
-  width: 100px;
-  height: 30px;
   grid-area: Reset;
   justify-self: center;
+  margin-left: 50px;
+  border: 0;
+  background-repeat: no-repeat;
+  background: url(/images/icons8-обновить-50.png);
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  box-shadow: 0px 0px 50px 26px rgba(0, 0, 0, 0.1) inset;
 }
+
+.button-reset:hover {
+  background-color: #fff;
+}
+
+.button-reset:active {
+  background-color: #fa9292;
+}
+
 .popup {
   grid-area: Popup;
   width: 50px;
@@ -29,18 +45,18 @@
 }
 
 .popup span {
-  height: 2px;
+  height: 3px;
   width: 30%;
   transform: scale(1);
-  background-color: #fff;
+  background-color: #000;
 }
 
 .popup::before, .popup::after {
   content: '';
   position: absolute;
-  height: 2px;
+  height: 3px;
   width: 60%;
-  background-color: #fff;
+  background-color: #000;
   transition: all 0.3s ease 0s;
 }
 
@@ -59,9 +75,11 @@
 .popup.active::before {
   top: 50%;
   transform: rotate(-45deg) translate(0, -50%);
+  background-color: #fff;
 }
 
 .popup.active::after {
   bottom: 50%;
   transform: rotate(45deg) translate(0, 50%);
+  background-color: #fff;
 }

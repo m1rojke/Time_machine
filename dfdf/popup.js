@@ -43,6 +43,7 @@ class Timer {
   
   resetTimer() {
     this.globalTime.textContent = "0";
+    
   }
   
   pause() {
@@ -71,6 +72,6 @@ buttonRun.addEventListener('click', function() {
       timerShow.innerHTML = strTimer;
       --timeMinut;
   }
-} )
+}, 1000)
 }
 )
