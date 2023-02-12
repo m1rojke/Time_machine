@@ -43,7 +43,6 @@ class Timer {
   
   resetTimer() {
     this.globalTime.textContent = "0";
-    
   }
   
   pause() {
@@ -62,7 +61,7 @@ let timerShow = document.getElementById("timer");
 
 buttonRun.addEventListener('click', function() {
  let timeMinut = parseInt(timerShow.textContent) * 60;
- setInterval(function () {
+ setInterval( () => {
   seconds = timeMinut%60
   minutes = timeMinut/60%60
   if (timeMinut <= 0) {
@@ -72,6 +71,6 @@ buttonRun.addEventListener('click', function() {
       timerShow.innerHTML = strTimer;
       --timeMinut;
   }
-}, 1000)
+} )
 }
 )
