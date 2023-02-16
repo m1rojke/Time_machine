@@ -10,14 +10,17 @@
 </head>
 <body class="page">
   <nav class="nav">
-    <div style="display: flex;">
-    <input type="range" min="00" max="60" class="input-setter" name="time" id="time">
-    <button type="button" class="button-set">go</button>
+    <div class="wrapper-nav">
+      <p class="p-nav">Time :</p>
+       <div class="setting-nav">
+          <p class="p-nav p__min-plus" id="minus">−</p>
+          <input type="text" maxlength="2" class="input-setter" data-type="number" id="time" readonly value="5">
+          <p class="p-nav p__min-plus" id="plus">+</p>
+       </div>
     </div>
   </nav>
   <header class="header">
     <button class="button-reset"></button>
-    <!-- <button class="popup">menu</button> -->
     <div class="popup">
       <span></span>
     </div>
@@ -25,7 +28,7 @@
   <section class="wrapper">
     <div class="timer">
       <h1 class="timer__title">таймер</h1>
-      <div class="timer__value" id="timer">0</div>
+      <div class="timer__value" id="timer">00:00</div>
     </div>
     <button class="timer__start" id="button"></button>
   </section>
