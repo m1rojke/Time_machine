@@ -138,7 +138,6 @@ class Timer {
   }
   
   stop() {
-    this.setinterval ='';
   }
 }
 const timer = new Timer();
