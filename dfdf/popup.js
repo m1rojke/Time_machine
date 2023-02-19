@@ -120,10 +120,10 @@ class Timer {
   }
   
   start(time) {
-    if(this.setinterval !== 0) {
-      clearInterval(this.setinterval);
+    if(this.intevalId !== 0) {
+      clearInterval(this.intevalId);
     }
-   this.setinterval = setInterval ( () => {
+   this.intevalId = setInterval ( () => {
     if(time.minuts == 0 && time.seconds == 0) {
       return
     } if (time.seconds == 0) {
