@@ -120,7 +120,7 @@ class Timer {
   }
   
   start(time) {
-    if(this.intevalId !== null) {
+    if(this.intevalId != null) {
       stop();
     }
    this.intevalId = setInterval ( () => {
