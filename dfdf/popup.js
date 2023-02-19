@@ -7,55 +7,59 @@ const inputSetter = document.querySelector('.input-setter');
 const timerValue = document.querySelector('.timer__value');
 const minSetter = document.getElementById('minus');
 const plusSetter = document.getElementById('plus');
+
+
 document.addEventListener('keydown', (evt) => {
   if(evt.key === 'Escape') {
     popUp.classList.toggle('active');
     nav.classList.toggle('open');
   }
 })
+
+
 document.addEventListener('keydown', (evt) =>{
-    if(evt.key === 'ArrowDown') {
-        timer.min();
-        timerValue.textContent = `${inputSetter.value}:00`;
-      } if(evt.key === 'ArrowUp') {
-          timer.plus();
-          timerValue.textContent = `${inputSetter.value}:00`
-        }
-      })
-      
-      
-      minuts = inputSetter.value;
-      seconds = '00';
-      
-      timerValue.textContent = `${minuts}:${seconds}`;
-      
-      minSetter.addEventListener('click', () => {
-        timer.min();
-        timerValue.textContent = `${inputSetter.value}:00`
-      })
-      
-      plusSetter.addEventListener('click', () =>{
-        timer.plus();
-        timerValue.textContent = `${inputSetter.value}:00`
-      })
+  if(evt.key === 'ArrowDown') {
+    timer.min();
+    timerValue.textContent = `${inputSetter.value}:00`;
+  } if(evt.key === 'ArrowUp') {
+    timer.plus();
+    timerValue.textContent = `${inputSetter.value}:00`
+    }
+})
 
-      buttonStart.addEventListener('click', () => {
-        timer.start({
-          minuts: inputSetter.value - 1,
-          seconds: 60
-        })
-        popUp.classList.remove('active');
-        nav.classList.remove('open');
-      })
 
-      document.addEventListener('keydown', (evt) =>{
-        if(evt.key === 'Enter') {
-          timer.start({
-            minuts: inputSetter.value - 1,
-            seconds: 60
-          })
-        }
-      })
+minuts = inputSetter.value;
+seconds = '00';
+
+timerValue.textContent = `${minuts}:${seconds}`;
+
+minSetter.addEventListener('click', () => {
+  timer.min();
+  timerValue.textContent = `${inputSetter.value}:00`
+})
+
+plusSetter.addEventListener('click', () =>{
+  timer.plus();
+  timerValue.textContent = `${inputSetter.value}:00`
+})
+
+buttonStart.addEventListener('click', () => {
+  timer.start({
+  minuts: inputSetter.value - 1,
+  seconds: 60
+  })
+  popUp.classList.remove('active');
+  nav.classList.remove('open');
+})
+
+document.addEventListener('keydown', (evt) =>{
+  if(evt.key === 'Enter') {
+    timer.start({
+    minuts: inputSetter.value - 1,
+    seconds: 60
+    })
+  }
+})
 
 buttonRes.addEventListener('click', () => {
   timer.stop();
@@ -112,7 +116,7 @@ class Timer {
   }
   
   pause() {
-    
+    console.log(star.this.setinterval())
   }
   
   start(time) {
@@ -125,7 +129,7 @@ class Timer {
     } if (time.seconds !== 0) {
         --time.seconds;
         this.setTimer(time);
-    } else return
+    }
     }, 1000)
 
   }
