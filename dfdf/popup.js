@@ -121,8 +121,7 @@ class Timer {
   
   start(time) {
     if(this.intevalId !== null) {
-      clearInterval(this.intevalId);
-      this.intevalId = null;
+      stop();
     }
    this.intevalId = setInterval ( () => {
     if(time.minuts == 0 && time.seconds == 0) {
@@ -139,6 +138,8 @@ class Timer {
   }
   
   stop() {
+    clearInterval(this.intevalId);
+    this.intevalId = null;
   }
 }
 const timer = new Timer();
