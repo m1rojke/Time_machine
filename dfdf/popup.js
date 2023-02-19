@@ -120,8 +120,9 @@ class Timer {
   }
   
   start(time) {
-    if(this.intevalId !== 0) {
+    if(this.intevalId !== NaN) {
       clearInterval(this.intevalId);
+      this.intevalId = NaN;
     }
    this.intevalId = setInterval ( () => {
     if(time.minuts == 0 && time.seconds == 0) {
