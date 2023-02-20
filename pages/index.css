@@ -36,23 +36,31 @@
   height: 100px;
 }
 
-.timer__start {
+.timers {
   width: 64px;
   height: 62px;
   margin-top: 5px;
   justify-self: center;
-  background: url(../images/icons8-кнопка-воспроизведения-круглая-64.png);
   border: 0;
-  overflow: hidden;
   border-radius: 100%;
-  box-shadow: 0px 0px 50px 26px rgba(0, 0, 0, 0.1) inset;
-}
-.timer__start:hover {
-  background-color: #fff;
+  box-shadow: 0px 0px 50px 26px rgba(0, 0, 0, 0.2) inset;
+  background: url(../images/icons8-кнопка-воспроизведения-круглая-64.png);
+  background-color: #92fac1;
 }
 
-.timer__start:active {
-  background-color: #fa9292;
+
+.pause {
+  justify-self: center;
+  background: url(../images/icons8-пауза-в-кружке-64.png);
+  background-color: #ff35357f;
+}
+
+.timers:hover{
+  /* background-color: #ffffff43; */
+}
+
+.timers:active{
+  background-color: #9fb9e5;
 }
 
 .footer {
