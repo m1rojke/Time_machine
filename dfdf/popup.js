@@ -17,7 +17,7 @@ document.addEventListener('keydown', (evt) => {
 })
 
 document.addEventListener('keydown', (evt) =>{
-  if (evt.key === 'ArrowDown') {
+  if (evt.key === 'ArrowDown'){
     timer.min();
     timerValue.textContent = `${inputSetter.value}:00`;
   } if (evt.key === 'ArrowUp') {
@@ -25,7 +25,6 @@ document.addEventListener('keydown', (evt) =>{
     timerValue.textContent = `${inputSetter.value}:00`
   }
 })
-
 
 document.addEventListener('keydown', (evt) => {
   if (evt.key === 'Enter') {
@@ -35,7 +34,6 @@ document.addEventListener('keydown', (evt) => {
     })
   }
 })
-
 
 minuts = inputSetter.value;
 seconds = '00';
