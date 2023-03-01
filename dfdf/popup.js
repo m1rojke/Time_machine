@@ -8,8 +8,6 @@ const timerValue = document.querySelector('.timer__value');
 const minSetter = document.getElementById('minus');
 const plusSetter = document.getElementById('plus');
 
-buttonRes.style.visibility = 'hidden';
-
 const time = {
   minuts: inputSetter.value,
   seconds: '00'
@@ -26,9 +24,9 @@ plusSetter.addEventListener('click', () =>{
   timer.plus();
   timerValue.textContent = `${inputSetter.value}:${time.seconds}`
 })
-// buttonRes.addEventListener('click', () => {
-//   timer.stop();
-// });
+buttonRes.addEventListener('click', () => {
+  document.location.reload();
+});
 
 buttonStart.addEventListener('click', () => {
   timer.start(time) 
