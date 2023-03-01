@@ -1,35 +1,57 @@
 const popUp = document.querySelector('.popup');
 const nav = document.querySelector('.nav');
-const buttonSet = document.querySelector('.button-set');
 const buttonRes = document.querySelector('.button-reset');
 const buttonStart = document.querySelector('.timers');
-const inputSetter = document.querySelector('.input-setter');
 const timerValue = document.querySelector('.timer__value');
+const inputSetter = document.querySelector('.input-setter');
 const minSetter = document.getElementById('minus');
 const plusSetter = document.getElementById('plus');
 
-const time = {
+
+minSetter.addEventListener('click', () => {
+  buttonStart.classList.remove('pause');
+  timer.stop();
+  timer.min();
+  time.minuts = inputSetter.value;
+  time.seconds = "00";
+  timerValue.textContent = `${inputSetter.value}:${time.seconds}`;
+  if (inputSetter.value < 10) {
+    timerValue.textContent = `0${inputSetter.value}:${time.seconds}`;
+  }
+})
+
+plusSetter.addEventListener('click', () =>{
+  buttonStart.classList.remove('pause');
+  timer.stop();
+  timer.plus();
+  time.minuts = inputSetter.value;
+  time.seconds = "00";
+  timerValue.textContent = `${inputSetter.value}:${time.seconds}`;
+  if (inputSetter.value < 10) {
+    timerValue.textContent = `0${inputSetter.value}:${time.seconds}`;
+  }
+})
+
+let time = {
   minuts: inputSetter.value,
   seconds: '00'
 }
 
-timerValue.textContent = `${time.minuts}:${time.seconds}`;
+function value () {
+  timerValue.textContent = `${time.minuts}:${time.seconds}`;
+  if (inputSetter.value < 10) {
+    timerValue.textContent = `0${inputSetter.value}:${time.seconds}`;
+  }
+}
 
-minSetter.addEventListener('click', () => {
-  timer.min();
-  timerValue.textContent = `${inputSetter.value}:${time.seconds}`
-})
+value();
 
-plusSetter.addEventListener('click', () =>{
-  timer.plus();
-  timerValue.textContent = `${inputSetter.value}:${time.seconds}`
-})
 buttonRes.addEventListener('click', () => {
   document.location.reload();
 });
 
 buttonStart.addEventListener('click', () => {
-  timer.start(time) 
+  timer.start(time); 
   popUp.classList.remove('active');
   nav.classList.remove('open');
   buttonStart.classList.toggle('pause');
@@ -67,6 +89,13 @@ class Timer {
 
   setTimer(time) {
     this.globalTime.textContent = `${time.minuts}:${time.seconds}`;
+    if (time.seconds < 10) {
+      this.globalTime.textContent = `${time.minuts}:0${time.seconds}`;
+    } if (time.minuts < 10) {
+      this.globalTime.textContent = `0${time.minuts}:${time.seconds}`;
+    } if (time.minuts < 10 && time.seconds < 10) {
+      this.globalTime.textContent = `0${time.minuts}:0${time.seconds}`;
+    }
   }
 
   start(time) {
@@ -87,6 +116,14 @@ class Timer {
       } 
     }, 1000);
   }
+
+  stop() {
+    if (this.intervalId != null) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+      return 
+    }
+  }
 }
 
 const timer = new Timer();
@@ -101,16 +138,33 @@ document.addEventListener('keydown', (evt) => {
 
 document.addEventListener('keydown', (evt) =>{
   if (evt.key === 'ArrowDown'){
+    buttonStart.classList.remove('pause');
+    timer.stop();
     timer.min();
-    timerValue.textContent = `${inputSetter.value}:00`;
+    time.minuts = inputSetter.value;
+    time.seconds = "00";
+    timerValue.textContent = `${inputSetter.value}:${time.seconds}`;
+    if (inputSetter.value < 10) {
+      timerValue.textContent = `0${inputSetter.value}:${time.seconds}`;
+    }
   } if (evt.key === 'ArrowUp') {
+    buttonStart.classList.remove('pause');
+    timer.stop();
     timer.plus();
-    timerValue.textContent = `${inputSetter.value}:00`
+    time.minuts = inputSetter.value;
+    time.seconds = "00";
+    timerValue.textContent = `${inputSetter.value}:${time.seconds}`;
+    if (inputSetter.value < 10) {
+      timerValue.textContent = `0${inputSetter.value}:${time.seconds}`;
+    }
   }
 })
 
 document.addEventListener('keydown', (evt) => {
   if (evt.key === 'Enter') {
-    timer.start(time)
+    timer.start(time); 
+    popUp.classList.remove('active');
+    nav.classList.remove('open');
+    buttonStart.classList.toggle('pause');
   }
 })
