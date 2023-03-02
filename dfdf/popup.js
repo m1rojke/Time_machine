@@ -1,44 +1,37 @@
-const popUp = document.querySelector('.popup');
-const nav = document.querySelector('.nav');
-const buttonRes = document.querySelector('.button-reset');
-const buttonStart = document.querySelector('.timers');
-const timerValue = document.querySelector('.timer__value');
-const inputSetter = document.querySelector('.input-setter');
-const minSetter = document.getElementById('minus');
-const plusSetter = document.getElementById('plus');
+const popUp = document.querySelector(".popup");
+const nav = document.querySelector(".nav");
+const buttonRes = document.querySelector(".button-reset");
+const buttonStart = document.querySelector(".timers");
+const timerValue = document.querySelector(".timer__value");
+const inputSetter = document.querySelector(".input-setter");
+const minSetter = document.getElementById("minus");
+const plusSetter = document.getElementById("plus");
 
-
-minSetter.addEventListener('click', () => {
-  buttonStart.classList.remove('pause');
+minSetter.addEventListener("click", () => {
+  buttonStart.classList.remove("pause");
   timer.stop();
   timer.min();
   time.minuts = inputSetter.value;
   time.seconds = "00";
-  timerValue.textContent = `${inputSetter.value}:${time.seconds}`;
-  if (inputSetter.value < 10) {
-    timerValue.textContent = `0${inputSetter.value}:${time.seconds}`;
-  }
-})
+  value();
+});
 
-plusSetter.addEventListener('click', () =>{
-  buttonStart.classList.remove('pause');
+plusSetter.addEventListener("click", () => {
+  buttonStart.classList.remove("pause");
   timer.stop();
   timer.plus();
   time.minuts = inputSetter.value;
   time.seconds = "00";
-  timerValue.textContent = `${inputSetter.value}:${time.seconds}`;
-  if (inputSetter.value < 10) {
-    timerValue.textContent = `0${inputSetter.value}:${time.seconds}`;
-  }
-})
+  value();
+});
 
 let time = {
   minuts: inputSetter.value,
-  seconds: '00'
-}
+  seconds: "00",
+};
 
-function value () {
-  timerValue.textContent = `${time.minuts}:${time.seconds}`;
+function value() {
+  timerValue.textContent = `${inputSetter.value}:${time.seconds}`;
   if (inputSetter.value < 10) {
     timerValue.textContent = `0${inputSetter.value}:${time.seconds}`;
   }
@@ -46,34 +39,33 @@ function value () {
 
 value();
 
-buttonRes.addEventListener('click', () => {
+buttonRes.addEventListener("click", () => {
   document.location.reload();
 });
 
-buttonStart.addEventListener('click', () => {
-  timer.start(time); 
-  popUp.classList.remove('active');
-  nav.classList.remove('open');
-  buttonStart.classList.toggle('pause');
-})
+buttonStart.addEventListener("click", () => {
+  timer.start(time);
+  popUp.classList.remove("active");
+  nav.classList.remove("open");
+  buttonStart.classList.toggle("pause");
+});
 
-popUp.addEventListener('click', function() {
-  popUp.classList.toggle('active');
-  nav.classList.toggle('open');
+popUp.addEventListener("click", function () {
+  popUp.classList.toggle("active");
+  nav.classList.toggle("open");
 });
 
 class Timer {
   constructor() {
-    this.globalTime = document.querySelector('.timer__value');
-    this.inputSetter = document.querySelector('.input-setter');
+    this.globalTime = document.querySelector(".timer__value");
+    this.inputSetter = document.querySelector(".input-setter");
   }
 
-  check() {
-  }
+  check() {}
 
   min() {
     if (this.inputSetter.value == 5) {
-      return
+      return;
     } else {
       --this.inputSetter.value;
     }
@@ -81,7 +73,7 @@ class Timer {
 
   plus() {
     if (this.inputSetter.value == 55) {
-      return
+      return;
     } else {
       ++this.inputSetter.value;
     }
@@ -91,9 +83,11 @@ class Timer {
     this.globalTime.textContent = `${time.minuts}:${time.seconds}`;
     if (time.seconds < 10) {
       this.globalTime.textContent = `${time.minuts}:0${time.seconds}`;
-    } if (time.minuts < 10) {
+    }
+    if (time.minuts < 10) {
       this.globalTime.textContent = `0${time.minuts}:${time.seconds}`;
-    } if (time.minuts < 10 && time.seconds < 10) {
+    }
+    if (time.minuts < 10 && time.seconds < 10) {
       this.globalTime.textContent = `0${time.minuts}:0${time.seconds}`;
     }
   }
@@ -102,18 +96,20 @@ class Timer {
     if (this.intervalId != null) {
       clearInterval(this.intervalId);
       this.intervalId = null;
-      return 
+      return;
     }
-    this.intervalId = setInterval ( () => {
+    this.intervalId = setInterval(() => {
       if (time.minuts == 0 && time.seconds == 0) {
-        return
-      } if (time.seconds == 0) {
-          --time.minuts;
-          time.seconds = 60;
-      } if (time.seconds !== 0) {
-          --time.seconds;
-          this.setTimer(time);
-      } 
+        return;
+      }
+      if (time.seconds == 0) {
+        --time.minuts;
+        time.seconds = 60;
+      }
+      if (time.seconds !== 0) {
+        --time.seconds;
+        this.setTimer(time);
+      }
     }, 1000);
   }
 
@@ -121,7 +117,7 @@ class Timer {
     if (this.intervalId != null) {
       clearInterval(this.intervalId);
       this.intervalId = null;
-      return 
+      return;
     }
   }
 }
@@ -129,42 +125,37 @@ class Timer {
 const timer = new Timer();
 
 // KEYDOWN SETTINGS
-document.addEventListener('keydown', (evt) => {
-  if (evt.key === 'Escape') {
-    popUp.classList.toggle('active');
-    nav.classList.toggle('open');
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "Escape") {
+    popUp.classList.toggle("active");
+    nav.classList.toggle("open");
   }
-})
+});
 
-document.addEventListener('keydown', (evt) =>{
-  if (evt.key === 'ArrowDown'){
-    buttonStart.classList.remove('pause');
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "ArrowDown") {
+    buttonStart.classList.remove("pause");
     timer.stop();
     timer.min();
     time.minuts = inputSetter.value;
     time.seconds = "00";
-    timerValue.textContent = `${inputSetter.value}:${time.seconds}`;
-    if (inputSetter.value < 10) {
-      timerValue.textContent = `0${inputSetter.value}:${time.seconds}`;
-    }
-  } if (evt.key === 'ArrowUp') {
-    buttonStart.classList.remove('pause');
+    value();
+  }
+  if (evt.key === "ArrowUp") {
+    buttonStart.classList.remove("pause");
     timer.stop();
     timer.plus();
     time.minuts = inputSetter.value;
     time.seconds = "00";
-    timerValue.textContent = `${inputSetter.value}:${time.seconds}`;
-    if (inputSetter.value < 10) {
-      timerValue.textContent = `0${inputSetter.value}:${time.seconds}`;
-    }
+    value();
   }
-})
+});
 
-document.addEventListener('keydown', (evt) => {
-  if (evt.key === 'Enter') {
-    timer.start(time); 
-    popUp.classList.remove('active');
-    nav.classList.remove('open');
-    buttonStart.classList.toggle('pause');
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "Enter") {
+    timer.start(time);
+    popUp.classList.remove("active");
+    nav.classList.remove("open");
+    buttonStart.classList.toggle("pause");
   }
-})
+});

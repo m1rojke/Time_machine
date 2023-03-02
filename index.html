@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="images/icons8-clock-16.png">
-  <link rel="stylesheet" href="vendor/normalize.css">
-  <link href="pages/index.css" rel="stylesheet">
-  <title>Time_machine</title>
-</head>
-<body class="page">
-  <nav class="nav">
-    <div class="wrapper-nav">
-      <p class="p-nav">Time :</p>
-       <div class="setting-nav">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="images/icons8-clock-16.png" />
+    <link rel="stylesheet" href="vendor/normalize.css" />
+    <link href="pages/index.css" rel="stylesheet" />
+    <title>Time_machine</title>
+  </head>
+  <body class="page">
+    <nav class="nav">
+      <div class="wrapper-nav">
+        <p class="p-nav">Time :</p>
+        <div class="setting-nav">
           <p class="p-nav p__min-plus" id="minus">−</p>
-          <input type="text" maxlength="2" class="input-setter" data-type="number" id="time" readonly value="5">
+          <input
+            type="text"
+            maxlength="2"
+            class="input-setter"
+            data-type="number"
+            id="time"
+            readonly
+            value="5"
+          />
           <p class="p-nav p__min-plus" id="plus">+</p>
-       </div>
-    </div>
-  </nav>
-  <header class="header">
-    <button class="button-reset"></button>
-    <div class="popup">
-      <span></span>
-    </div>
-  </header>
-  <section class="wrapper">
-    <div class="timer">
-      <h1 class="timer__title">таймер</h1>
-      <div class="timer__value" id="timer"></div>
-    </div>
-    <button class="timers" id="button"></button>
-  </section>
-  <footer class="footer">
-    <div class="lap">
-      <span class="lap-current">0</span>
-      из
-      <span class="lap-total">20</span>
-      кругов
-    </div>
-    <button class="info">info</button>
-  </footer>
-  <script src="dfdf/popup.js"></script>
-</body>
+        </div>
+      </div>
+    </nav>
+    <header class="header">
+      <button class="button-reset"></button>
+      <div class="popup">
+        <span></span>
+      </div>
+    </header>
+    <section class="wrapper">
+      <div class="timer">
+        <h1 class="timer__title">таймер</h1>
+        <div class="timer__value" id="timer"></div>
+      </div>
+      <button class="timers" id="button"></button>
+    </section>
+    <footer class="footer">
+      <div class="lap">
+        <span class="lap-current">0</span>
+        из
+        <span class="lap-total">20</span>
+        кругов
+      </div>
+      <button class="info">info</button>
+    </footer>
+    <script src="dfdf/popup.js"></script>
+  </body>
 </html>
