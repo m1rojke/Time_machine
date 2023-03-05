@@ -6,6 +6,7 @@ const timerValue = document.querySelector(".timer__value");
 const inputSetter = document.querySelector(".input-setter");
 const minSetter = document.getElementById("minus");
 const plusSetter = document.getElementById("plus");
+const lap = document.querySelector(".lap-current").textContent;
 
 minSetter.addEventListener("click", () => {
   buttonStart.classList.remove("pause");
@@ -44,6 +45,7 @@ buttonRes.addEventListener("click", () => {
 });
 
 buttonStart.addEventListener("click", () => {
+  buttonRes.classList.add("show");
   timer.start(time);
   popUp.classList.remove("active");
   nav.classList.remove("open");
@@ -59,6 +61,7 @@ class Timer {
   constructor() {
     this.globalTime = document.querySelector(".timer__value");
     this.inputSetter = document.querySelector(".input-setter");
+    this.lap = lap;
   }
 
   check() {}
