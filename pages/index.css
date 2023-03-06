@@ -40,6 +40,7 @@
   font-variant: normal;
   font-weight: 700;
   line-height: 26.4px;
+  user-select: none;
 }
 
 .timer__value {
@@ -50,6 +51,7 @@
   height: 100px;
   text-shadow: 8px 8px 4px #00000070;
   font-family: Brush Script MT, cursive;
+  user-select: none;
 }
 
 .timers {
@@ -126,6 +128,7 @@
   width: 100%;
   text-align: center;
   font-family: Brush Script MT, cursive;
+  user-select: none;
 }
 
 .setting-nav {
