@@ -1,3 +1,5 @@
+import './styles.css'
+
 const popUp = document.querySelector(".popup");
 const nav = document.querySelector(".nav");
 const buttonRes = document.querySelector(".button-reset");
@@ -6,7 +8,7 @@ const timerValue = document.querySelector(".timer__value");
 const inputSetter = document.querySelector(".input-setter");
 const minSetter = document.getElementById("minus");
 const plusSetter = document.getElementById("plus");
-const ticTac = document.getElementById("tic");
+// const ticTac = document.getElementById("tic");
 
 minSetter.addEventListener("click", () => {
   buttonStart.classList.remove("pause");
@@ -50,9 +52,9 @@ buttonStart.addEventListener("click", () => {
   popUp.classList.remove("active");
   nav.classList.remove("open");
   buttonStart.classList.toggle("pause");
-  setInterval(() => {
-    ticTac.autoplay = true;
-  }, 800)
+  // setInterval(() => {
+  //   ticTac.autoplay = true;
+  // }, 800)
 });
 
 popUp.addEventListener("click", function () {
@@ -64,7 +66,6 @@ class Timer {
   constructor() {
     this.globalTime = document.querySelector(".timer__value");
     this.inputSetter = document.querySelector(".input-setter");
-    this.ticTac = ticTac;
   }
 
   check() {}
@@ -74,7 +75,6 @@ class Timer {
       return;
     } else {
       --this.inputSetter.value;
-      this.ticTac.muted = true;
     }
   }
 
@@ -83,7 +83,6 @@ class Timer {
       return;
     } else {
       ++this.inputSetter.value;
-      this.ticTac.muted = true;
     }
   }
 
@@ -104,11 +103,9 @@ class Timer {
     if (this.intervalId != null) {
       clearInterval(this.intervalId);
       this.intervalId = null;
-      this.ticTac.muted = true;
       return 
     }
     this.intervalId = setInterval(() => {
-      this.ticTac.muted = false;
       if (time.minuts == 0 && time.seconds == 0) {
         return;
       }

@@ -1,6 +1,100 @@
-@import url(../blocks/page/page.css);
+.page {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  background: #fff;
+  font-weight: 400;
+}
 /*HEADER SECTION*/
-@import url(../blocks/header/header.css);
+.header {
+  margin: 0;
+  padding: 15px 15px;
+  width: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  grid-template-areas: "Reset Popup";
+  grid-auto-rows: 30%;
+}
+
+.button-reset {
+  grid-area: Reset;
+  justify-self: center;
+  margin-left: 50px;
+  border: 0;
+  background-repeat: no-repeat;
+  background: url(../images/icons8-обновить-50.png);
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  box-shadow: 0px 0px 50px 26px rgba(0, 0, 0, 0.1) inset;
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
+
+.button-reset:hover {
+  background-color: #fff;
+}
+
+.button-reset:active {
+  background-color: #fa9292;
+}
+
+.popup {
+  grid-area: Popup;
+  width: 50px;
+  height: 17px;
+  align-self: center;
+  justify-self: flex-end;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup span {
+  height: 3px;
+  width: 30%;
+  transform: scale(1);
+  background-color: #000;
+}
+
+.popup::before,
+.popup::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 60%;
+  background-color: #000;
+  transition: all 0.3s ease 0s;
+}
+
+.popup::before {
+  top: 0;
+}
+
+.popup::after {
+  bottom: 0;
+}
+
+.popup.active span {
+  transform: scale(0);
+}
+
+.popup.active::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -50%);
+  background-color: #fff;
+}
+
+.popup.active::after {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0, 50%);
+  background-color: #fff;
+}
 
 .wrapper {
   margin: 0;
