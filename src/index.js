@@ -1,4 +1,3 @@
-import './styles.css'
 
 const popUp = document.querySelector(".popup");
 const nav = document.querySelector(".nav");
@@ -8,7 +7,7 @@ const timerValue = document.querySelector(".timer__value");
 const inputSetter = document.querySelector(".input-setter");
 const minSetter = document.getElementById("minus");
 const plusSetter = document.getElementById("plus");
-// const ticTac = document.getElementById("tic");
+const ticTac = document.getElementById("tic");
 
 minSetter.addEventListener("click", () => {
   buttonStart.classList.remove("pause");
@@ -52,9 +51,9 @@ buttonStart.addEventListener("click", () => {
   popUp.classList.remove("active");
   nav.classList.remove("open");
   buttonStart.classList.toggle("pause");
-  // setInterval(() => {
-  //   ticTac.autoplay = true;
-  // }, 800)
+  const intervalTic = setInterval(() => {
+    ticTac.autoplay = true;
+  }, 800)
 });
 
 popUp.addEventListener("click", function () {

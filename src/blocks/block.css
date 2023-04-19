@@ -157,13 +157,13 @@
   border-radius: 100%;
   box-shadow: 0px 0px 50px 26px rgba(0, 0, 0, 0.2) inset;
   background: url(../images/icons8-кнопка-воспроизведения-круглая-64.png);
-  background-color: #6effe4;
+  background-color: #6effe400;
 }
 
 .pause {
   justify-self: center;
   background: url(../images/icons8-пауза-в-кружке-64.png);
-  background-color: #ff35357f;
+  background-color: #ff353500;
 }
 
 .timers:active {
