@@ -146,6 +146,8 @@
   text-shadow: 8px 8px 4px #00000070;
   font-family: Brush Script MT, cursive;
   user-select: none;
+  display: flex;
+  padding: 0 0 0 40px;
 }
 
 .timers {
