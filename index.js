@@ -51,9 +51,6 @@ buttonStart.addEventListener("click", () => {
   popUp.classList.remove("active");
   nav.classList.remove("open");
   buttonStart.classList.toggle("pause");
-  const intervalTic = setInterval(() => {
-    ticTac.autoplay = true;
-  }, 800)
 });
 
 popUp.addEventListener("click", function () {
